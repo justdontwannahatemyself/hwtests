@@ -1,0 +1,40 @@
+Шишлянников Александр Андреевич
+1)Метод getCoins2, 93 строка
+return coins1; - вместо return 0, несхожесть с ТЗ 
+2)Метод fillProducts,
+if(mode == Mode.OPERATION) return Response.ILLEGAL_OPERATION; - Добавить перед выполнением метода, несхожесть с ТЗ
+3) Метод fillCoins
+if(c1 <= 0 || c2 > maxc1) return Response.INVALID_PARAM; - вместо c2 - c1, так как ставим условие на монеты 1го вида
+4) Метод enterAdminMode
+if(balance != 0) return Response.UNSUITABLE_CHANGE; - вместо Response.UNSUITABLE_CHANGE - Response.CANNOT_PERFORM
+5) Метод setPrices
+if(p1 <= 0 || p1 <= 0) return Response.INVALID_PARAM; - вместо одного из p1 - p2
+6)Метод putCoin1
+if(coins2 == maxc2)	return Response.CANNOT_PERFORM; - вместо этого в условном операторе должно быть if(coins1 == maxc1)
+7) Метод putCoin1
+balance += coinval2 - вместо этого coinval1
+8) Метод putCoin1
+coins2++ - вместо этого coins1++
+9) Метод putCoin2
+Метод putCoin2
+if(coins1 == maxc1)	return Response.CANNOT_PERFORM; - вместо этого в условном операторе должно быть if(coins2 == maxc2)
+10) Метод putCoin2
+balance += coinval1 - вместо этого coinval2
+11) Метод putCoin2
+coins1++ - вместо этого coins2++
+12)Метод giveProduct2
+coins1 -= (res/coinval2); вместо этого: coins2 -= (res/coinval2);
+13) Метод getCoins2
+    if(mode == Mode.OPERATION)
+      return coins1; вместо этого - return coins2
+14)Метод setPrices
+if(mode == Mode.OPERATION) return Response.INVALID_PARAM; вместо этого: if(mode == Mode.OPERATION) return Response.ILLEGAL_OPERATION;
+15) Метод returnMoney()
+coins1 -= (balance/coinval2); вместо этого: coins1--;
+16) Метод returnMoney()
+coins2--; вместо этого : coins2 -= (balance/coinval2)
+17) Метод giveProduct2()
+else if(res > coins1*coinval1 + coins2*coinval2)
+        {
+            return Response.INSUFFICIENT_MONEY; - вместо этого - return Response.TOO_BIG_CHANGE;
+        }
